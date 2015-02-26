@@ -1,0 +1,374 @@
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/austin2014.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <!--<slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/austin2014/austin_logo.png"></span>
+    </article>
+  </slide>-->
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/sparkle_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Marketing Engineering?</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <div class="columns-2">
+        <ul>
+          <li><b>Digital Transformation</b>: every organization is now a software organization</li>
+          <li><b>Marketing Needs</b>: Lead generation, prospect engagement, scalability</li>
+          <li><b>On-time, On-budget</b>: Evaluate and adopt OSS where possible</li>
+        </ul>
+        <ul style="list-style:none;">
+          <li>@todo image to right <img src="images/sky.jpg" style="width:100%;" /></li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Analytics at the speed of thought</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="position:relative;bottom:15px;z-index:-1;" src="images/tableau-desktop.gif" alt="Tableau Desktop Gif" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Who buys Tableau and how?</h2>
+    </hgroup>
+    <article>
+      <p>Tableau provides value to customers in virtually all verticals, all departments, at all job levels. Marketing to such a broad audience has challenges.</p>
+        <ul class="build">
+        <li><b>Industry relevancy</b>: Tech, healthcare, manufacturers (etc.) want unique content relevant to their vertical</li>
+        <li><b>Relevancy by role</b>: Analysts, sysadmins, and executives have different needs and buying styles</li>
+        <li><b>Depth in the funnel</b>: Fresh prospects require different content compared to existing business</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>How we measure success</h2>
+    </hgroup>
+    <article>
+      <div class="columns-2">
+        <ul>
+          <li><b>Data collection</b>: Every trial, whitepaper, training video, webinar download/interaction</li>
+          <li><b>Event metadata</b>: Attach lead source, campaign, firmographic, and other details to each event</li>
+          <li><b>Analysis</b>: Which campaigns/LSs/LSDs generated the most leads? The most customers? The most revenue?</li>
+        </ul>
+        <ul>
+          <li><img src="images/elq_salesforce_dashboard.png" style="width:100%;" /></li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/newrelic_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Enter: New Relic Insights</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Scalable, real-time event database</h2>
+    </hgroup>
+    <article>
+      <div class="columns-2">
+        <ul>
+          <li>Performance and other software metrics from APM</li>
+          <li>Decorate events with arbitrary metadata at run-time</li>
+          <li><pre class="prettyprint" data-lang="php">&lt;?php
+$value = get_uid();
+newrelic_add_custom_parameter('uid',
+  $value);</pre>
+          </li>
+          <li>Add custom events from any source through an API</li>
+          <li><pre class="prettyprint" data-lang="php">&lt;?php
+newrelic_record_custom_event('Sale',
+  $eventDataArray);</pre>
+          </li>
+        </ul>
+        <ul>
+          <li><img src="images/insights_overview.jpg" /></li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Typical lead flow</h2>
+    </hgroup>
+    <article>
+      <div class="columns-2">
+        <ul>
+          <li><img src="images/whitepaper_form.png" style="width:100%;" /></li>
+          <li><img src="images/whitepaper_confirmation.png" style="width:100%;" /></li>
+        </ul>
+        <ul>
+          <li><img src="images/whitepaper_hidden.png" style="width:100%;" /></li>
+          <li><b>Form POST</b> tracked by APM</li>
+          <li><b>Form Data</b> as custom attrs</li>
+          <li><b>User</b> gets the whitepaper</li>
+          <li><b>Content</b> recommendations</li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Whitepaper download analysis 1/3</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="position:relative;bottom:15px;z-index:-1;width:650px;" src="images/insights_all.png" alt="Whitepaper Downloads Donut" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Whitepaper download analysis 2/3</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="position:relative;bottom:15px;z-index:-1;width:650px;" src="images/insights_analysts.png" alt="Whitepaper Downloads by Analysts Donut" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Whitepaper download analysis 3/3</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="position:relative;bottom:15px;z-index:-1;width:650px;" src="images/insights_vps.png" alt="Whitepaper Downloads by VPs Donut" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>A business analyst might conclude</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li><b>Overall</b>: more analysts download whitepaper content than execs/vps</li>
+        <li><b>Analysts</b> seem to prefer technical, tool-oriented content that makes them smarter</li>
+        <li><b>Executives/VPs</b> seem to prefer market reports, trends, vision, culture, and strategy-oriented content</li>
+        <li><b>Battle plan</b>: To increase engagement and click-throughs, and to provide sales with better prepared, higher quality leads, we should start a project to revamp the way we recommend whitepapers on the site.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Avoiding wasted effort</h2>
+    </hgroup>
+    <article>
+      <p>Why spin up a project with a creative brief, user scenarios, goals, tech specs, estimates, change requests, etc...  When you don't have to?</p>
+      <div class="columns-2">
+        <ul>
+          <li><b>Lightning fast</b>: Insights can tear through 100s of millions of records, sub-second</li>
+          <li><b>A JSON API</b> for running NRQL queries</li>
+          <li><b>What if</b> we integrated Insights with our app?</li>
+        </ul>
+        <ul>
+          <li><img src="images/insights_json.png" style="width:100%;" /></li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/druplicon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Enter: Integrated Analytics</h2>
+      <h3>Give your app insights. Literally</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Integrating with Drupal</h2>
+    </hgroup>
+    <article>
+      <p>With Drupal, we've integrated Insights at the deepest level possible:</p>
+      <ul>
+        <li><b>Entity API</b> provides the conceptual framework, organizing Insights events into records with known properties</li>
+        <li><b>Entity Field Query</b>, a datastore-agnostic query builder, is used as the basis for remotely querying and retrieving Insights data</li>
+        <li><b>Statistics API</b> is used to define how and what data is collected and stored on each Transaction</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>How it looks programmatically</h2>
+    </hgroup>
+    <article>
+      <p>We can use Entity Field Query to build up and execute a query.</p>
+      <pre class="prettyprint" data-lang="php">&lt;?php
+$efq = new EntityFieldQuery();
+$efq->entityCondition('entity_type', 'insight');
+$efq->entityCondition('bundle', array('Transaction', 'PageView'), 'IN');
+$efq->propertyCondition('uid', array(5, 27), 'NOT IN');
+$efq->propertyCondition('timestamp', array(
+  strtotime('February 26th, 2015 6:30pm'),
+  strtotime('February 26th, 2015 7:00pm'),
+), 'BETWEEN');
+$results = $efq->execute();</pre>
+      <pre>SELECT * FROM Transaction, PageView
+WHERE (uid != 5 AND uid != 27)
+SINCE 1 hour ago UNTIL 30 minutes ago</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Insights for the NRQL-uninitiated</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="position:relative;bottom:15px;z-index:-1;width:850px;" src="images/integration_views.png" alt="Building Insights Queries with Views" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>A more mundane use-case</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="position:relative;bottom:15px;z-index:-1;width:850px;" src="images/integration_bulk_ops.png" alt="Views Bulk Operations on Insights" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Bringing it back to whitepapers</h2>
+    </hgroup>
+    <article>
+      <p>Not only can we build and execute NRQL queries in Insights from Drupal, we can also <b>filter</b> Drupal lists based on data returned by Insights.</p>
+      <p>It also just so happens the list of "related whitepapers" on our confirmation page is a Drupal View.</p>
+      <img src="images/drupal_view.png" alt="Contextual Link indicating a View is configurable" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Filtering Views with Insights</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="width:750px;" src="images/drupal_filter.png" alt="Filtering views contextually with Insights data" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Related Whitepapers for Analysts</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="width:850px;" src="images/filtered_analysts.png" alt="Related whitepapers for analysts" />
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Related Whitepapers for Execs & VPs</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="width:850px;" src="images/filtered_vps.png" alt="Related whitepapers for executives and VPs" />
+    </article>
+  </slide>
+
+  <slide class="nobackground">
+    <hgroup>
+      <h2>Just the tip of the iceberg</h2>
+    </hgroup>
+    <article>
+      <p>With your analytics deeply integrated with your app, imagine the possibilities</p>
+      <ul class="build fade">
+        <li><b>Other confirmation/conversion pages</b>: Sidebar/footer recommended content?</li>
+        <li><b>A/B test</b> the NRQL queries you're using to personalize content, automatically select and configure the winner</li>
+        <li><b>E-commerce</b>: tie conversions/successes to direct sales</li>
+        <li><b>Web app security</b> use-case: detect suspicious behavior and force re-authentication</li>
+        <li>What can you think of for your use-case?</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="thank-you-slide segue nobackground">
+    <aside class="gdbar right"><img src="images/sparkle_128.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thanks, Q&A, etc.</h2>
+      <p>Also, we're hiring: <a href="http://careers.tableau.com" style="color:white;">careers.tableau.com</a></p>
+    </article>
+    <p class="auto-fadein" data-config-contact>
+      <!-- populated from slide_config.json -->
+    </p>
+  </slide>
+
+  <!--<slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/austin2014/austin_logo.png"></span>
+    </article>
+  </slide>-->
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-13028513-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
